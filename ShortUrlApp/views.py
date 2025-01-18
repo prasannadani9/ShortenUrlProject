@@ -83,7 +83,16 @@ class ShortenUrlAPIView(APIView):
 class GetMainUrlByShortAPIView(APIView):
     def get(self, request, *args, **kwargs):
         short_url = request.GET.get("short_url", "")
-        main_url_data = UrlDataMainModel.objects.get(short_url = short_url)
+        try:
+            main_url_data = UrlDataMainModel.objects.get(short_url = short_url)
+        except:
+            return Response(
+                {
+                    "message" : "Failed",
+                    "data" : "This short url does not exist"
+                },
+                status=status.HTTP_400_BAD_REQUEST
+            )
         current_time = timezone.now() + timedelta(hours = 5, minutes= 30)
         if main_url_data.expiry_time < current_time:
             response_data = {
