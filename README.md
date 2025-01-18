@@ -37,9 +37,9 @@ Description : This API is to get the shortened URL against the main long URL.
 request body:
 
 {
-    "main_url" : "http://www.prasannadani9.com/jhauoevf/khqhevfu/dkjvrfa/dkagcgwcaf/kuGFUYTCRDIGKY/KFEQUTYQ/cwgvrcw/icywrygxygisyugwif"
+    "main_url" : "https://www.prasannadani9.com/jhauoevf/khqhevfu/dkjvrfa/dkagcgwcaf/kuGFUYTCRDIGKY/KFEQUTYQ/cwgvrcw/icywrygxygisyugwif",
+    "expiry_in_hours" : 4
 }
-
 response body:
 
 {
